@@ -1,0 +1,17 @@
+# One player per line, as shown on the FPL website.
+# If a name is shared by several players, add the team: Name|TEAM
+Raya
+Dennis
+Thomas|COV
+Hall
+Frimpong
+Guéhi
+Amass
+Schade
+Lewis-Potter
+Reed
+Cherki
+Mbeumo
+Isak
+Thiago
+Haaland

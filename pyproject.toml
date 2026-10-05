@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fpl-optimizer"
+version = "0.1.0"
+description = "Fantasy Premier League transfer optimizer: Poisson expected points, MILP and Monte Carlo"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "piotrstoklosa144-jpg" }]
+keywords = ["fantasy-premier-league", "optimization", "milp", "monte-carlo", "poisson"]
+dependencies = [
+    "requests>=2.28",
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "pulp>=2.7",
+    "highspy>=1.7",  # solver used by PuLP 4+
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+fpl-optimizer = "fpl_optimizer.cli:main"
+
+[project.urls]
+Repository = "https://github.com/piotrstoklosa144-jpg/fpl-optimizer"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 115
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["fpl_optimizer"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
